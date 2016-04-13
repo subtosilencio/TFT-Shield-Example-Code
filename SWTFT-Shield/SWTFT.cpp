@@ -512,16 +512,16 @@ void SWTFT::setRotation(uint8_t x) {
   CS_ACTIVE;
  
 
- //   uint16_t t;
- //   switch(rotation) {
- //    default: t = 0x1030; break;
- //    case 1 : t = 0x1028; break;
- //    case 2 : t = 0x1000; break;
- //    case 3 : t = 0x1018; break;
- //   }
- //   writeRegister16(0x0003, t ); // MADCTL
+    uint16_t t;
+    switch(rotation) {
+     default: t = 0x1030; break;
+     case 1 : t = 0x1028; break;
+     case 2 : t = 0x1000; break;
+     case 3 : t = 0x1018; break;
+    }
+    writeRegister16(0x0003, t ); // MADCTL
  //    For 932X, init default full-screen address window:
- //   setAddrWindow(0, 0, _width - 1, _height - 1); // CS_IDLE happens here
+    setAddrWindow(0, 0, _width - 1, _height - 1); // CS_IDLE happens here
 
   
 }
