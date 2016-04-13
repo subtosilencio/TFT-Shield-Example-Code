@@ -29,7 +29,11 @@ void setup()
   tft.begin(identifier);
 
   Serial.print(F("Initializing SD card..."));
-  if (!SD.begin(SD_CS)) {
+//when using "ILI9328 LCD driver" you need to specify the pins, Adafruit says that because the Mega and UNO 
+//do not have the same hardware SPI pinout, 
+//we need to specify which pins we will be using for SPI communication with the card.
+if (!SD.begin(10, 11, 12, 13)) {
+//if (!SD.begin(SD_CS)) {
     Serial.println(F("failed!"));
     return;
   }
